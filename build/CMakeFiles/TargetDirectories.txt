@@ -1,0 +1,4 @@
+/home/guestcc/share/ccnet-master/build/CMakeFiles/edit_cache.dir
+/home/guestcc/share/ccnet-master/build/CMakeFiles/rebuild_cache.dir
+/home/guestcc/share/ccnet-master/build/CMakeFiles/Threadpool_test.dir
+/home/guestcc/share/ccnet-master/build/CMakeFiles/ccnet.dir

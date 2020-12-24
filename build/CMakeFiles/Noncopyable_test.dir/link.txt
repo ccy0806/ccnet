@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g -Wall -Wno-unused-variable -pthread -g  -rdynamic CMakeFiles/Noncopyable_test.dir/src/test/Noncopyable_test.cpp.o  -o bin/Noncopyable_test 

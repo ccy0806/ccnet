@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/guestcc/share/ccnet-master/include/base/Testclass.h
+
+/home/guestcc/share/ccnet-master/src/base/Testclass.cpp
+../../include/base/Testclass.h
+/home/guestcc/share/ccnet-master/include/base/Testclass.h
+iostream
+-
+

@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/guestcc/share/ccnet-master/include/base/Noncopyable.h
+
+/home/guestcc/share/ccnet-master/include/base/Threadpool.h
+vector
+-
+queue
+-
+thread
+-
+functional
+-
+string
+-
+mutex
+-
+condition_variable
+-
+Noncopyable.h
+/home/guestcc/share/ccnet-master/include/base/Noncopyable.h
+
+/home/guestcc/share/ccnet-master/src/base/Threadpool.cpp
+../../include/base/Threadpool.h
+/home/guestcc/share/ccnet-master/include/base/Threadpool.h
+exception
+-
+iostream
+-
+

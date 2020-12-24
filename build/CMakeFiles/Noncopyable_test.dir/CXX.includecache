@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/guestcc/share/ccnet-master/include/base/Noncopyable.h
+
+/home/guestcc/share/ccnet-master/src/test/Noncopyable_test.cpp
+../../include/base/Noncopyable.h
+/home/guestcc/share/ccnet-master/include/base/Noncopyable.h
+iostream
+-
+
