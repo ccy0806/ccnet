@@ -6,33 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/guestcc/share/ccnet-master/include/base/Noncopyable.h
-
-/home/guestcc/share/ccnet-master/include/base/Threadpool.h
-vector
--
-queue
--
-thread
--
-functional
--
-string
--
-mutex
--
-condition_variable
--
-Noncopyable.h
-/home/guestcc/share/ccnet-master/include/base/Noncopyable.h
-
-/home/guestcc/share/ccnet-master/src/test/Threadpool_test.cpp
-../../include/base/Threadpool.h
-/home/guestcc/share/ccnet-master/include/base/Threadpool.h
-iostream
--
-thread
--
-chrono
--
-

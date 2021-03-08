@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g -Wall -Wno-unused-variable -pthread -g  -rdynamic CMakeFiles/Logger_test.dir/src/test/Logger_test.cpp.o CMakeFiles/Logger_test.dir/src/base/Logger.cpp.o CMakeFiles/Logger_test.dir/src/base/Timestamp.cpp.o  -o bin/Logger_test 

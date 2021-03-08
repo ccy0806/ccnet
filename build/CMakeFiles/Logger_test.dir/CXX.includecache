@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/base/Logger.h
+memory
+-
+Timestamp.h
+../include/base/Timestamp.h
+sstream
+-
+fstream
+-
+
+../include/base/Timestamp.h
+ctime
+-
+string
+-
+memory
+-
+sys/time.h
+-
+
+/home/guestcc/share/ccnet/src/base/Logger.cpp
+include/base/Logger.h
+/home/guestcc/share/ccnet/src/base/include/base/Logger.h
+iostream
+-
+

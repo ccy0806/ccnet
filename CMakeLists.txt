@@ -13,7 +13,10 @@ else( CMAKE_BUILD_TYPE STREQUAL "Debug" )
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O2 -pthread -fopenmp")
 endif( CMAKE_BUILD_TYPE STREQUAL "Debug" )
 
-include_directories(include/base)											#指定include路径，头文件路径
+
+include_directories(${PROJECT_SOURCE_DIR})                                  #指定include路径，头文件寻址起点路径
+
+										
 add_library(${PROJECT_NAME} SHARED
 src/base/Threadpool.cpp
 )
@@ -23,7 +26,8 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)						#设置二进制可�
 
 
 #add_executable(Singleton_test src/test/Singleton_test.cpp)					#指定生成目标
-add_executable(Threadpool_test src/test/Threadpool_test.cpp src/base/Threadpool.cpp)
+#add_executable(Threadpool_test src/test/Threadpool_test.cpp src/base/Threadpool.cpp)
 #add_executable(Noncopyable_test src/test/Noncopyable_test.cpp)
-
+add_executable(Timestamp_test src/test/Timestamp_test.cpp src/base/Timestamp.cpp)
+add_executable(Logger_test src/test/Logger_test.cpp src/base/Logger.cpp src/base/Timestamp.cpp)
 

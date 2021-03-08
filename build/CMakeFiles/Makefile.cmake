@@ -45,6 +45,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Threadpool_test.dir/DependInfo.cmake"
+  "CMakeFiles/Logger_test.dir/DependInfo.cmake"
+  "CMakeFiles/Timestamp_test.dir/DependInfo.cmake"
   "CMakeFiles/ccnet.dir/DependInfo.cmake"
   )

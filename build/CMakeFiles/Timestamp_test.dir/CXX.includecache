@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/base/Timestamp.h
+ctime
+-
+string
+-
+memory
+-
+sys/time.h
+-
+
+/home/guestcc/share/ccnet/src/base/Timestamp.cpp
+include/base/Timestamp.h
+/home/guestcc/share/ccnet/src/base/include/base/Timestamp.h
+iostream
+-
+

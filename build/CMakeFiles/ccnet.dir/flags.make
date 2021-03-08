@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -g -Wall -Wno-unused-variable -pthread -g -fPIC
 
 CXX_DEFINES = -Dccnet_EXPORTS
 
-CXX_INCLUDES = -I/home/guestcc/share/ccnet-master/include/base 
+CXX_INCLUDES = -I/home/guestcc/share/ccnet 
 
