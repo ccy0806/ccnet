@@ -1,5 +1,4 @@
 /home/guestcc/share/ccnet/build/CMakeFiles/edit_cache.dir
-/home/guestcc/share/ccnet/build/CMakeFiles/Logger_test.dir
-/home/guestcc/share/ccnet/build/CMakeFiles/Timestamp_test.dir
+/home/guestcc/share/ccnet/build/CMakeFiles/test.dir
 /home/guestcc/share/ccnet/build/CMakeFiles/rebuild_cache.dir
 /home/guestcc/share/ccnet/build/CMakeFiles/ccnet.dir

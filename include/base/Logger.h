@@ -5,6 +5,8 @@
 #include "Timestamp.h"
 #include <sstream>
 #include <fstream>
+#include <string>
+#include <list>
 namespace ccnet 
 {
 
@@ -41,16 +43,18 @@ public:
     };
     Logger(const char* srcfile, size_t line, LoggerLevel level, const char* func);
     ~Logger();
-    static void setLoggerLevel(Logger::LoggerLevel level);
-    void writeLog();
-    Logger::LoggerLevel getLoggerLevel();
-    std::stringstream& getSS();                     //获取日志流
-    static LoggerLevel logLevel();
+    void writeLog();                                        //写日志到目标
+    //Logger::LoggerLevel getLoggerLevel();                   
+    std::stringstream& getSS();                             //获取日志流
+    static LoggerLevel logLevel();                          //获取限制日志等级
+    static void setLoggerLevel(Logger::LoggerLevel level);  //设置日志限制等级
+    static void addAppender(std::shared_ptr<LogAppender>);         //添加日志输出地
+    static void clearAppender();
 private:
     std::stringstream m_ss;                         //日志缓冲流
     std::shared_ptr<LogAppender> m_appender;         //日志输出地
-    //日志内容
-    std::string m_logName;                          //日志名
+    static std::list<std::shared_ptr<LogAppender>> m_appenderList; //日志输出目的地列表
+    static std::string m_logName;                          //日志名
     LoggerLevel m_level;                            //日志级别
     size_t m_threadId;                              //线程id
     size_t m_line;                                  //行号
@@ -63,8 +67,7 @@ private:
 
 };
 
-
-extern Logger::LoggerLevel g_logLevel; 
+extern Logger::LoggerLevel g_logLevel;              
 inline Logger::LoggerLevel Logger::logLevel()
 {
   return g_logLevel;
@@ -79,8 +82,8 @@ public:
     typedef std::shared_ptr<LogAppender> ptr;
     virtual ~LogAppender(){}                             //基类析构函数需要定义为虚函数
     virtual void writeLog(Logger &logger) = 0;       //纯虚函数，需要子类定义写日志方法。
-
-private:
+    inline void setAppenderState(bool state){m_isActive = state;}
+    bool m_isActive = true;
 };
 
 //日志输出地:文件
@@ -89,6 +92,7 @@ class FileLogAppender : public LogAppender
 public:
     typedef std::shared_ptr<FileLogAppender> ptr;
     FileLogAppender(std::string);
+    ~FileLogAppender();
     void writeLog(Logger &logger) override;
 private:
     std::ofstream m_fout;                       //文件流对象

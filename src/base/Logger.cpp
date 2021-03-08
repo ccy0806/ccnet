@@ -3,7 +3,7 @@
 namespace ccnet{
 
 __thread time_t t_lastSecond;
-
+extern std::list<std::shared_ptr<LogAppender>> Logger::m_appenderList; //定义日志输出目的地列表
 Logger::Logger(const char* srcfile, size_t line, Logger::LoggerLevel level, const char* func) :
     m_srcfile(srcfile),
     m_line(line),
@@ -11,15 +11,11 @@ Logger::Logger(const char* srcfile, size_t line, Logger::LoggerLevel level, cons
     m_func(func),
     m_ts(Timestamp::now())
 {
-    std::cout << m_ts.getMicroSecondsSinceEpoch() << std::endl;
-    //formatLogger();
-    std::string mytime = m_ts.getFormatDay("%Y%m%d %H:%M:%S");
-    m_logName = "logfile-" + mytime + ".log";
-
-    m_appender = LogAppender::ptr(new FileLogAppender(m_logName));
-    //m_appender = LogAppender::ptr(new StdoutLogAppender);
-
-    this->getSS() << mytime << " " << m_srcfile <<" " << g_logLevel << " " << m_func  << ":" << m_line << " ";
+    //std::cout << m_ts.getMicroSecondsSinceEpoch() << std::endl;
+    m_appender = LogAppender::ptr(new StdoutLogAppender);
+    std::string myday = m_ts.getFormatDay("%Y%m%d");
+    std::string mytime = m_ts.getFormatDay(" %H:%M:%S");
+    this->getSS() << myday << mytime << " " << m_srcfile <<" " << g_logLevel << " " << m_func  << ":" << m_line << " ";
 }
 
 Logger::~Logger()
@@ -27,20 +23,43 @@ Logger::~Logger()
     // auto self = shared_from_this();
     writeLog();
 }
-
 void Logger::formatLogger()
 {
 
 }
-
+void Logger::clearAppender()
+{
+    m_appenderList.clear();
+}
+void Logger::addAppender(std::shared_ptr<LogAppender> appender)
+{
+    m_appenderList.push_back(appender);
+}
 void Logger::writeLog()
 {
-    //auto self = shared_from_this();
-    m_appender->writeLog(std::ref(*this));
-    if(m_level == LoggerLevel::FATAL)
+    if(m_appenderList.empty())
     {
-        abort();
+        
+        m_appender->writeLog(std::ref(*this));
     }
+    else
+    {
+        for(auto it = m_appenderList.begin(); it != m_appenderList.end(); ++it)
+        {
+            (*it)->writeLog(std::ref(*this));
+            if(g_logLevel == LoggerLevel::FATAL)
+            {
+                abort();
+            }
+        }
+    }
+
+    //auto self = shared_from_this();
+    //m_appender->writeLog(std::ref(*this));
+    //if(m_level == LoggerLevel::FATAL)
+    //{
+    //    abort();
+    //}
 }
 
 Logger::LoggerLevel initLogLevel()
@@ -64,14 +83,23 @@ std::stringstream& Logger::getSS()
     return m_ss;
 }
 
-FileLogAppender::FileLogAppender(std::string logName) : m_logName(logName){}
+
+
+FileLogAppender::FileLogAppender(std::string logName) : m_logName(logName)
+{
+    m_fout.open(m_logName, std::ofstream::out | std::ofstream::app);
+}
+FileLogAppender::~FileLogAppender()
+{
+    m_fout.close();
+}
 //从缓冲区将日志输出到文件
 void FileLogAppender::writeLog(Logger &logger)
 {
-    m_fout.open(m_logName, std::ofstream::out | std::ofstream::app);
-    m_fout << logger.getSS().str() << std::endl;
-    m_fout.close();
-
+    if(m_isActive)
+    {
+        m_fout << logger.getSS().str() << std::endl;
+    }
 }
 
 
