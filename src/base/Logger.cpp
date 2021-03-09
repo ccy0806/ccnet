@@ -1,8 +1,20 @@
 #include "include/base/Logger.h"
 #include <iostream>
+
 namespace ccnet{
 
-__thread time_t t_lastSecond;
+__thread char t_timebuf[64];
+__thread time_t t_lastSeconds;
+
+const char* LogLevelName[Logger::LoggerLevel::NUM_OF_LOGGER_LEVELS] =
+{
+  "TRACE ",
+  "DEBUG ",
+  "INFO  ",
+  "WARN  ",
+  "ERROR ",
+  "FATAL ",
+};
 extern std::list<std::shared_ptr<LogAppender>> Logger::m_appenderList; //定义日志输出目的地列表
 Logger::Logger(const char* srcfile, size_t line, Logger::LoggerLevel level, const char* func) :
     m_srcfile(srcfile),
@@ -11,11 +23,9 @@ Logger::Logger(const char* srcfile, size_t line, Logger::LoggerLevel level, cons
     m_func(func),
     m_ts(Timestamp::now())
 {
-    //std::cout << m_ts.getMicroSecondsSinceEpoch() << std::endl;
     m_appender = LogAppender::ptr(new StdoutLogAppender);
-    std::string myday = m_ts.getFormatDay("%Y%m%d");
-    std::string mytime = m_ts.getFormatDay(" %H:%M:%S");
-    this->getSS() << myday << mytime << " " << m_srcfile <<" " << g_logLevel << " " << m_func  << ":" << m_line << " ";
+    formatTime();
+    this->getSS() << m_srcfile <<" " << LogLevelName[m_level] << m_func  << ":" << m_line << " ";
 }
 
 Logger::~Logger()
@@ -23,9 +33,23 @@ Logger::~Logger()
     // auto self = shared_from_this();
     writeLog();
 }
-void Logger::formatLogger()
+void Logger::formatTime()
 {
+    int64_t microSecondsSinceEpoch = m_ts.getMicroSecondsSinceEpoch();
+    time_t seconds = static_cast<time_t>(microSecondsSinceEpoch / Timestamp::kMicroSecondsPerSecond);
+    int microseconds = static_cast<int>(microSecondsSinceEpoch % Timestamp::kMicroSecondsPerSecond);
+    if(seconds != t_lastSeconds)
+    {
+        t_lastSeconds = seconds;
+        time_t mytime;
+        time(&mytime);
+        struct tm * timeinfo = localtime(&mytime);
 
+        strftime(t_timebuf, sizeof(t_timebuf), "%Y-%m-%d %H:%M:%S.", timeinfo);
+    }
+    char buf[12];
+    snprintf(buf, sizeof(buf), "%06d", microseconds);
+    this->getSS() << t_timebuf << buf;
 }
 void Logger::clearAppender()
 {
@@ -53,13 +77,6 @@ void Logger::writeLog()
             }
         }
     }
-
-    //auto self = shared_from_this();
-    //m_appender->writeLog(std::ref(*this));
-    //if(m_level == LoggerLevel::FATAL)
-    //{
-    //    abort();
-    //}
 }
 
 Logger::LoggerLevel initLogLevel()

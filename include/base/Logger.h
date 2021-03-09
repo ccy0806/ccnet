@@ -7,6 +7,7 @@
 #include <fstream>
 #include <string>
 #include <list>
+#include <map>
 namespace ccnet 
 {
 
@@ -61,10 +62,10 @@ private:
     std::string m_func;                             //函数名
     std::string m_srcfile;                          //文件名
     Timestamp m_ts;                             //时间戳类
+    //static std::string timeBuffer;
     size_t getThreadId();
-    void formatLogger();
+    void formatTime();
     //Logger::ptr m_logger;
-
 };
 
 extern Logger::LoggerLevel g_logLevel;              

@@ -19,6 +19,8 @@ string
 -
 list
 -
+map
+-
 
 ../include/base/Timestamp.h
 ctime
@@ -28,12 +30,6 @@ string
 memory
 -
 sys/time.h
--
-
-/home/guestcc/share/ccnet/src/base/Logger.cpp
-include/base/Logger.h
-/home/guestcc/share/ccnet/src/base/include/base/Logger.h
-iostream
 -
 
 /home/guestcc/share/ccnet/src/test/Logger_test.cpp

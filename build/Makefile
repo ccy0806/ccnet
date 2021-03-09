@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test
+# Target rules for targets named Logger_test
 
 # Build rule for target.
-test: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test
-.PHONY : test
+Logger_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 Logger_test
+.PHONY : Logger_test
 
 # fast build rule for target.
-test/fast:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-.PHONY : test/fast
+Logger_test/fast:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/build
+.PHONY : Logger_test/fast
 
 #=============================================================================
 # Target rules for targets named ccnet
@@ -135,6 +135,33 @@ ccnet: cmake_check_build_system
 ccnet/fast:
 	$(MAKE) -f CMakeFiles/ccnet.dir/build.make CMakeFiles/ccnet.dir/build
 .PHONY : ccnet/fast
+
+src/base/Logger.o: src/base/Logger.cpp.o
+
+.PHONY : src/base/Logger.o
+
+# target to build an object file
+src/base/Logger.cpp.o:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Logger.cpp.o
+.PHONY : src/base/Logger.cpp.o
+
+src/base/Logger.i: src/base/Logger.cpp.i
+
+.PHONY : src/base/Logger.i
+
+# target to preprocess a source file
+src/base/Logger.cpp.i:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Logger.cpp.i
+.PHONY : src/base/Logger.cpp.i
+
+src/base/Logger.s: src/base/Logger.cpp.s
+
+.PHONY : src/base/Logger.s
+
+# target to generate assembly for a file
+src/base/Logger.cpp.s:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Logger.cpp.s
+.PHONY : src/base/Logger.cpp.s
 
 src/base/Threadpool.o: src/base/Threadpool.cpp.o
 
@@ -163,32 +190,59 @@ src/base/Threadpool.cpp.s:
 	$(MAKE) -f CMakeFiles/ccnet.dir/build.make CMakeFiles/ccnet.dir/src/base/Threadpool.cpp.s
 .PHONY : src/base/Threadpool.cpp.s
 
-src/test/test.o: src/test/test.cc.o
+src/base/Timestamp.o: src/base/Timestamp.cpp.o
 
-.PHONY : src/test/test.o
+.PHONY : src/base/Timestamp.o
 
 # target to build an object file
-src/test/test.cc.o:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/test/test.cc.o
-.PHONY : src/test/test.cc.o
+src/base/Timestamp.cpp.o:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Timestamp.cpp.o
+.PHONY : src/base/Timestamp.cpp.o
 
-src/test/test.i: src/test/test.cc.i
+src/base/Timestamp.i: src/base/Timestamp.cpp.i
 
-.PHONY : src/test/test.i
+.PHONY : src/base/Timestamp.i
 
 # target to preprocess a source file
-src/test/test.cc.i:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/test/test.cc.i
-.PHONY : src/test/test.cc.i
+src/base/Timestamp.cpp.i:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Timestamp.cpp.i
+.PHONY : src/base/Timestamp.cpp.i
 
-src/test/test.s: src/test/test.cc.s
+src/base/Timestamp.s: src/base/Timestamp.cpp.s
 
-.PHONY : src/test/test.s
+.PHONY : src/base/Timestamp.s
 
 # target to generate assembly for a file
-src/test/test.cc.s:
-	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/src/test/test.cc.s
-.PHONY : src/test/test.cc.s
+src/base/Timestamp.cpp.s:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Timestamp.cpp.s
+.PHONY : src/base/Timestamp.cpp.s
+
+src/test/Logger_test.o: src/test/Logger_test.cpp.o
+
+.PHONY : src/test/Logger_test.o
+
+# target to build an object file
+src/test/Logger_test.cpp.o:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/test/Logger_test.cpp.o
+.PHONY : src/test/Logger_test.cpp.o
+
+src/test/Logger_test.i: src/test/Logger_test.cpp.i
+
+.PHONY : src/test/Logger_test.i
+
+# target to preprocess a source file
+src/test/Logger_test.cpp.i:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/test/Logger_test.cpp.i
+.PHONY : src/test/Logger_test.cpp.i
+
+src/test/Logger_test.s: src/test/Logger_test.cpp.s
+
+.PHONY : src/test/Logger_test.s
+
+# target to generate assembly for a file
+src/test/Logger_test.cpp.s:
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/test/Logger_test.cpp.s
+.PHONY : src/test/Logger_test.cpp.s
 
 # Help Target
 help:
@@ -197,15 +251,21 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
-	@echo "... test"
+	@echo "... Logger_test"
 	@echo "... rebuild_cache"
 	@echo "... ccnet"
+	@echo "... src/base/Logger.o"
+	@echo "... src/base/Logger.i"
+	@echo "... src/base/Logger.s"
 	@echo "... src/base/Threadpool.o"
 	@echo "... src/base/Threadpool.i"
 	@echo "... src/base/Threadpool.s"
-	@echo "... src/test/test.o"
-	@echo "... src/test/test.i"
-	@echo "... src/test/test.s"
+	@echo "... src/base/Timestamp.o"
+	@echo "... src/base/Timestamp.i"
+	@echo "... src/base/Timestamp.s"
+	@echo "... src/test/Logger_test.o"
+	@echo "... src/test/Logger_test.i"
+	@echo "... src/test/Logger_test.s"
 .PHONY : help
 
 

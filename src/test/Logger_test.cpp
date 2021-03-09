@@ -31,9 +31,11 @@ void bench(const std::string dst)
 }
 int main()
 {
-    bench("test1.log");
-    bench("test2.log");
-    bench("test3.log");
+    bench("nop");
+    bench("/dev/null");
+    //bench("test1.log");
+    //bench("test2.log");
+    //bench("test3.log");
 
     ccnet::LogAppender::ptr la2(new ccnet::FileLogAppender("log2.log"));
     ccnet::Logger::addAppender(la2);

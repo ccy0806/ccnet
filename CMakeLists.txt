@@ -29,5 +29,5 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)						#设置二进制可�
 #add_executable(Threadpool_test src/test/Threadpool_test.cpp src/base/Threadpool.cpp)
 #add_executable(Noncopyable_test src/test/Noncopyable_test.cpp)
 #add_executable(Timestamp_test src/test/Timestamp_test.cpp src/base/Timestamp.cpp)
-#add_executable(Logger_test src/test/Logger_test.cpp src/base/Logger.cpp src/base/Timestamp.cpp)
-add_executable(test src/test/test.cc)	
+add_executable(Logger_test src/test/Logger_test.cpp src/base/Logger.cpp src/base/Timestamp.cpp)
+

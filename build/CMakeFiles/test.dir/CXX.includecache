@@ -6,37 +6,3 @@
 
 #IncludeRegexTransform: 
 
-../include/base/log.h
-string
--
-stdint.h
--
-memory
--
-list
--
-sstream
--
-fstream
--
-vector
--
-stdarg.h
--
-map
--
-util.h
-../include/base/util.h
-singleton.h
-../include/base/singleton.h
-thread.h
-../include/base/thread.h
-
-/home/guestcc/share/ccnet/src/test/test.cc
-iostream
--
-include/base/log.h
-/home/guestcc/share/ccnet/src/test/include/base/log.h
-include/base/util.h
-/home/guestcc/share/ccnet/src/test/include/base/util.h
-
