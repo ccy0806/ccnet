@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g -Wall -Wno-unused-variable -pthread -g  -rdynamic CMakeFiles/Testclass_test.dir/src/test/Testclass_test.cpp.o CMakeFiles/Testclass_test.dir/src/base/Testclass.cpp.o  -o bin/Testclass_test 

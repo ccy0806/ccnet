@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g -Wall -Wno-unused-variable -pthread -g  -rdynamic CMakeFiles/AsyncLog_test.dir/src/test/AsyncLog_test.cpp.o CMakeFiles/AsyncLog_test.dir/src/base/Logger.cpp.o CMakeFiles/AsyncLog_test.dir/src/base/Timestamp.cpp.o  -o bin/AsyncLog_test 

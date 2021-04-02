@@ -1,0 +1,1 @@
+/usr/bin/c++   -std=c++11 -g -Wall -Wno-unused-variable -pthread -g  -rdynamic CMakeFiles/Timestamp_test.dir/src/test/Timestamp_test.cpp.o CMakeFiles/Timestamp_test.dir/src/base/Timestamp.cpp.o  -o bin/Timestamp_test 
