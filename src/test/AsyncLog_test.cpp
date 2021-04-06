@@ -8,8 +8,8 @@
 void bench()
 {
     
-    int n = 1000 * 1000;
-    //int n = 100;
+    //int n = 1000 * 1000;
+    int n = 10;
     const bool kLongLog = false;
     const std::string empty = " ";
     const std::string longStr(3000, 'X');
@@ -24,6 +24,8 @@ void bench()
 }
 int main()
 {
+    LOG_INFO << "info";
+    LOG_WARN << "WARN";
     ccnet::Logger::startAsyncLog("asynclog");
     bench();
 

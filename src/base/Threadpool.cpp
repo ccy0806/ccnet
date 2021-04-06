@@ -41,11 +41,6 @@ void Threadpool::Worker()
 			task();
 		}
 	}
-	
-<<<<<<< HEAD
-=======
-	
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 }
 
 void Threadpool::Stop()

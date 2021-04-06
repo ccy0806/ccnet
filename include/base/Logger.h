@@ -3,43 +3,20 @@
 
 #include <memory>
 #include "Timestamp.h"
-<<<<<<< HEAD
-<<<<<<< HEAD
 #include "FixBuffer.h"
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 #include <sstream>
 #include <fstream>
 #include <string>
 #include <list>
-<<<<<<< HEAD
-<<<<<<< HEAD
 #include <thread>
 #include <mutex>
 #include <chrono>
 #include <functional>
 #include <condition_variable>
 #include <unistd.h>
-namespace ccnet 
-{
 #include <map>
 namespace ccnet 
 {
-
-
-//日志管理器
-/*
-class LoggerManager
-{
-public:
-    LoggerManager();
-    ~LoggerManager();
-private:
-    map<Logger::ptr, const char*> mp;
-};
-*/
 
 class LogAppender;
 
@@ -176,6 +153,8 @@ private:
 #define LOG_ERROR ccnet::Logger(__FILE__, __LINE__, ccnet::Logger::ERROR, __func__).getSS()
 #define LOG_FATAL ccnet::Logger(__FILE__, __LINE__, ccnet::Logger::FATAL, __func__).getSS()
 
-#endif
+
 
 }//namespace ccnet
+
+#endif

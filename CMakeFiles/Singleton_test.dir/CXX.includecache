@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/guestcc/share/ccnet-log/ccnet/include/base/Noncopyable.h
+
+/home/guestcc/share/ccnet-log/ccnet/include/base/Singleton.h
+Noncopyable.h
+/home/guestcc/share/ccnet-log/ccnet/include/base/Noncopyable.h
+
+/home/guestcc/share/ccnet-log/ccnet/src/test/Singleton_test.cpp
+../../include/base/Singleton.h
+/home/guestcc/share/ccnet-log/ccnet/include/base/Singleton.h
+thread
+-
+vector
+-
+cstdio
+-
+functional
+-
+

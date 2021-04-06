@@ -35,14 +35,8 @@ int main()
     //bench("nop");
     bench("test1.log");
 
-    bench("nop");
-    bench("/dev/null");
-    //bench("test1.log");
-    bench("nop");
-    bench("/dev/null");
-    //bench("test1.log");
-    //bench("test2.log");
-    //bench("test3.log");
+    //bench("/dev/null");
+
 
     ccnet::LogAppender::ptr la2(new ccnet::FileLogAppender("log2.log"));
     ccnet::Logger::addAppender(la2);
