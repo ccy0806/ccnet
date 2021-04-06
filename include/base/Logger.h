@@ -4,13 +4,17 @@
 #include <memory>
 #include "Timestamp.h"
 <<<<<<< HEAD
+<<<<<<< HEAD
 #include "FixBuffer.h"
+=======
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 =======
 >>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 #include <sstream>
 #include <fstream>
 #include <string>
 #include <list>
+<<<<<<< HEAD
 <<<<<<< HEAD
 #include <thread>
 #include <mutex>
@@ -20,8 +24,6 @@
 #include <unistd.h>
 namespace ccnet 
 {
-
-=======
 #include <map>
 namespace ccnet 
 {
@@ -39,7 +41,6 @@ private:
 };
 */
 
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 class LogAppender;
 
 
@@ -67,14 +68,12 @@ public:
     static void setLoggerLevel(Logger::LoggerLevel level);  //设置日志限制等级
     static void addAppender(std::shared_ptr<LogAppender>);         //添加日志输出地
     static void clearAppender();
-<<<<<<< HEAD
     static void startAsyncLog(std::string baseName);
     char * getBuffer();
 private:
     char m_buffer[BUFSIZ];                              //日志缓冲流
-=======
 private:
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+private:
     std::stringstream m_ss;                         //日志缓冲流
     std::shared_ptr<LogAppender> m_appender;         //日志输出地
     static std::list<std::shared_ptr<LogAppender>> m_appenderList; //日志输出目的地列表
@@ -88,10 +87,9 @@ private:
     //static std::string timeBuffer;
     size_t getThreadId();
     void formatTime();
-<<<<<<< HEAD
+
     bool m_isAsyncLog;
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+
     //Logger::ptr m_logger;
 };
 
@@ -137,7 +135,6 @@ public:
 private:
 };
 
-<<<<<<< HEAD
 class AsyncOutputAppender : public LogAppender
 {
 public:
@@ -167,8 +164,6 @@ private:
 };
 
 
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 
 #define LOG_TRACE if(ccnet::Logger::logLevel() <= ccnet::Logger::LoggerLevel::TRACE)\
     ccnet::Logger(__FILE__, __LINE__, ccnet::Logger::TRACE, __func__).getSS()

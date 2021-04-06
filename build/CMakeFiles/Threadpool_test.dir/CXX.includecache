@@ -6,7 +6,6 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
 ../include/base/Noncopyable.h
 
 ../include/base/Threadpool.h
@@ -44,6 +43,3 @@ thread
 -
 chrono
 -
-
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7

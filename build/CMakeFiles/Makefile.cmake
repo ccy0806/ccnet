@@ -45,11 +45,8 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-<<<<<<< HEAD
   "CMakeFiles/AsyncLog_test.dir/DependInfo.cmake"
   "CMakeFiles/FixBuffer_test.dir/DependInfo.cmake"
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
   "CMakeFiles/Logger_test.dir/DependInfo.cmake"
   "CMakeFiles/ccnet.dir/DependInfo.cmake"
   )

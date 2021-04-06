@@ -6,7 +6,6 @@
 
 #IncludeRegexTransform: 
 
-<<<<<<< HEAD
 ../include/base/FixBuffer.h
 Noncopyable.h
 ../include/base/Noncopyable.h
@@ -17,18 +16,13 @@ string
 iostream
 -
 
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 ../include/base/Logger.h
 memory
 -
 Timestamp.h
 ../include/base/Timestamp.h
-<<<<<<< HEAD
 FixBuffer.h
 ../include/base/FixBuffer.h
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 sstream
 -
 fstream
@@ -37,7 +31,6 @@ string
 -
 list
 -
-<<<<<<< HEAD
 thread
 -
 mutex
@@ -53,11 +46,12 @@ unistd.h
 
 ../include/base/Noncopyable.h
 
-=======
 map
 -
 
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+map
+-
+
 ../include/base/Timestamp.h
 ctime
 -
@@ -68,13 +62,11 @@ memory
 sys/time.h
 -
 
-<<<<<<< HEAD
 /home/guestcc/share/ccnet/src/base/Logger.cpp
 include/base/Logger.h
 /home/guestcc/share/ccnet/src/base/include/base/Logger.h
 iostream
 -
-=======
 /home/guestcc/share/ccnet/src/test/Logger_test.cpp
 include/base/Logger.h
 /home/guestcc/share/ccnet/src/test/include/base/Logger.h
@@ -88,5 +80,4 @@ cstdio
 -
 list
 -
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 

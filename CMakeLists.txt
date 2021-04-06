@@ -25,16 +25,13 @@ src/base/Threadpool.cpp
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)						#设置二进制可执行文件输出目录
 
 
-#add_executable(Singleton_test src/test/Singleton_test.cpp)					#指定生成目标
-#add_executable(Threadpool_test src/test/Threadpool_test.cpp src/base/Threadpool.cpp)
-#add_executable(Noncopyable_test src/test/Noncopyable_test.cpp)
-#add_executable(Timestamp_test src/test/Timestamp_test.cpp src/base/Timestamp.cpp)
+add_executable(Singleton_test src/test/Singleton_test.cpp)					#指定生成目标
+add_executable(Threadpool_test src/test/Threadpool_test.cpp src/base/Threadpool.cpp)
+add_executable(Noncopyable_test src/test/Noncopyable_test.cpp)
+add_executable(Timestamp_test src/test/Timestamp_test.cpp src/base/Timestamp.cpp)
 add_executable(Logger_test src/test/Logger_test.cpp src/base/Logger.cpp src/base/Timestamp.cpp)
-<<<<<<< HEAD
-#add_executable(stringstream_test src/test/stringstream_test.cpp  src/base/Timestamp.cpp)
+
+add_executable(stringstream_test src/test/stringstream_test.cpp  src/base/Timestamp.cpp)
 
 add_executable(FixBuffer_test src/test/FixBuffer_test.cpp)
 add_executable(AsyncLog_test src/test/AsyncLog_test.cpp src/base/Logger.cpp src/base/Timestamp.cpp)
-=======
-
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7

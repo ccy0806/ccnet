@@ -7,11 +7,13 @@ void Print()
 	std::cout << "thread_id = " << std::this_thread::get_id() << "is working on Print()" << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 }
+
 void Print2()
 {
 	std::cout << "thread_id = " << std::this_thread::get_id() << "is working on Print222222222222222222()" << std::endl;
 	std::this_thread::sleep_for(std::chrono::seconds(1));
 }
+
 void test()
 {
 

@@ -31,14 +31,16 @@ void bench(const std::string dst)
 }
 int main()
 {
-<<<<<<< HEAD
+
     //bench("nop");
     bench("test1.log");
-=======
+
     bench("nop");
     bench("/dev/null");
     //bench("test1.log");
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+    bench("nop");
+    bench("/dev/null");
+    //bench("test1.log");
     //bench("test2.log");
     //bench("test3.log");
 

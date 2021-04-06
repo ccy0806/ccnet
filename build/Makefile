@@ -112,6 +112,7 @@ depend:
 
 #=============================================================================
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Target rules for targets named AsyncLog_test
 
 # Build rule for target.
@@ -138,6 +139,8 @@ FixBuffer_test/fast:
 .PHONY : FixBuffer_test/fast
 
 #=============================================================================
+=======
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 # Target rules for targets named Logger_test
 
 # Build rule for target.
@@ -146,6 +149,7 @@ Logger_test: cmake_check_build_system
 .PHONY : Logger_test
 
 # fast build rule for target.
+<<<<<<< HEAD
 =======
 # Target rules for targets named Logger_test
 
@@ -155,6 +159,8 @@ Logger_test: cmake_check_build_system
 .PHONY : Logger_test
 
 # fast build rule for target.
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+=======
 >>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 Logger_test/fast:
 	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/build
@@ -180,7 +186,10 @@ src/base/Logger.o: src/base/Logger.cpp.o
 # target to build an object file
 src/base/Logger.cpp.o:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/AsyncLog_test.dir/build.make CMakeFiles/AsyncLog_test.dir/src/base/Logger.cpp.o
+=======
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 =======
 >>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Logger.cpp.o
@@ -193,7 +202,10 @@ src/base/Logger.i: src/base/Logger.cpp.i
 # target to preprocess a source file
 src/base/Logger.cpp.i:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/AsyncLog_test.dir/build.make CMakeFiles/AsyncLog_test.dir/src/base/Logger.cpp.i
+=======
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 =======
 >>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Logger.cpp.i
@@ -206,7 +218,10 @@ src/base/Logger.s: src/base/Logger.cpp.s
 # target to generate assembly for a file
 src/base/Logger.cpp.s:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/AsyncLog_test.dir/build.make CMakeFiles/AsyncLog_test.dir/src/base/Logger.cpp.s
+=======
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 =======
 >>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Logger.cpp.s
@@ -246,7 +261,10 @@ src/base/Timestamp.o: src/base/Timestamp.cpp.o
 # target to build an object file
 src/base/Timestamp.cpp.o:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/AsyncLog_test.dir/build.make CMakeFiles/AsyncLog_test.dir/src/base/Timestamp.cpp.o
+=======
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 =======
 >>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Timestamp.cpp.o
@@ -259,7 +277,10 @@ src/base/Timestamp.i: src/base/Timestamp.cpp.i
 # target to preprocess a source file
 src/base/Timestamp.cpp.i:
 <<<<<<< HEAD
+<<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/AsyncLog_test.dir/build.make CMakeFiles/AsyncLog_test.dir/src/base/Timestamp.cpp.i
+=======
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 =======
 >>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Timestamp.cpp.i
@@ -271,6 +292,7 @@ src/base/Timestamp.s: src/base/Timestamp.cpp.s
 
 # target to generate assembly for a file
 src/base/Timestamp.cpp.s:
+<<<<<<< HEAD
 <<<<<<< HEAD
 	$(MAKE) -f CMakeFiles/AsyncLog_test.dir/build.make CMakeFiles/AsyncLog_test.dir/src/base/Timestamp.cpp.s
 	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Timestamp.cpp.s
@@ -335,6 +357,11 @@ src/test/FixBuffer_test.cpp.s:
 .PHONY : src/base/Timestamp.cpp.s
 
 >>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+=======
+	$(MAKE) -f CMakeFiles/Logger_test.dir/build.make CMakeFiles/Logger_test.dir/src/base/Timestamp.cpp.s
+.PHONY : src/base/Timestamp.cpp.s
+
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 src/test/Logger_test.o: src/test/Logger_test.cpp.o
 
 .PHONY : src/test/Logger_test.o
@@ -368,8 +395,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+<<<<<<< HEAD
 	@echo "... AsyncLog_test"
 	@echo "... FixBuffer_test"
+=======
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 	@echo "... edit_cache"
 	@echo "... Logger_test"
 	@echo "... rebuild_cache"
@@ -384,12 +414,15 @@ help:
 	@echo "... src/base/Timestamp.i"
 	@echo "... src/base/Timestamp.s"
 <<<<<<< HEAD
+<<<<<<< HEAD
 	@echo "... src/test/AsyncLog_test.o"
 	@echo "... src/test/AsyncLog_test.i"
 	@echo "... src/test/AsyncLog_test.s"
 	@echo "... src/test/FixBuffer_test.o"
 	@echo "... src/test/FixBuffer_test.i"
 	@echo "... src/test/FixBuffer_test.s"
+=======
+>>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 =======
 >>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 	@echo "... src/test/Logger_test.o"

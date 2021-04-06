@@ -2,13 +2,12 @@
 #include <iostream>
 
 namespace ccnet{
-<<<<<<< HEAD
 using Unique_Lock = std::unique_lock<std::mutex>;
 char t_timebuf[64];
-=======
+
 
 __thread char t_timebuf[64];
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+
 __thread time_t t_lastSeconds;
 
 const char* LogLevelName[Logger::LoggerLevel::NUM_OF_LOGGER_LEVELS] =
@@ -26,7 +25,6 @@ Logger::Logger(const char* srcfile, size_t line, Logger::LoggerLevel level, cons
     m_line(line),
     m_level(level),
     m_func(func),
-<<<<<<< HEAD
     m_ts(Timestamp::now()),
     m_isAsyncLog(false)
 {
@@ -34,7 +32,7 @@ Logger::Logger(const char* srcfile, size_t line, Logger::LoggerLevel level, cons
     
     formatTime();
 }
-=======
+
     m_ts(Timestamp::now())
 {
     m_appender = LogAppender::ptr(new StdoutLogAppender);
@@ -42,7 +40,6 @@ Logger::Logger(const char* srcfile, size_t line, Logger::LoggerLevel level, cons
     this->getSS() << m_srcfile <<" " << LogLevelName[m_level] << m_func  << ":" << m_line << " ";
 }
 
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 Logger::~Logger()
 {
     // auto self = shared_from_this();
@@ -61,18 +58,18 @@ void Logger::formatTime()
         struct tm * timeinfo = localtime(&mytime);
 
         strftime(t_timebuf, sizeof(t_timebuf), "%Y-%m-%d %H:%M:%S.", timeinfo);
-<<<<<<< HEAD
+
         //std::cout << t_timebuf << std::endl;
     }
     //char buf[64];
     snprintf(m_buffer, sizeof(m_buffer), "%s%06d %s %s %s:%ld %ld\n", t_timebuf, microseconds, m_srcfile.c_str(), LogLevelName[m_level], m_func.c_str(),m_line, std::this_thread::get_id());
     //this->getSS() << t_timebuf << buf << m_srcfile <<" " << LogLevelName[m_level] << m_func  << ":" << m_line << " ";
-=======
+
     }
     char buf[12];
     snprintf(buf, sizeof(buf), "%06d", microseconds);
     this->getSS() << t_timebuf << buf;
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+
 }
 void Logger::clearAppender()
 {
@@ -80,18 +77,18 @@ void Logger::clearAppender()
 }
 void Logger::addAppender(std::shared_ptr<LogAppender> appender)
 {
-<<<<<<< HEAD
+
     m_appenderList.push_back(std::move(appender));
 }
 void Logger::writeLog()
 {
     //std::cout << "appender num:" << m_appenderList.size() << std::endl;
-=======
+
     m_appenderList.push_back(appender);
 }
 void Logger::writeLog()
 {
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+
     if(m_appenderList.empty())
     {
         
@@ -99,10 +96,7 @@ void Logger::writeLog()
     }
     else
     {
-<<<<<<< HEAD
-        
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+
         for(auto it = m_appenderList.begin(); it != m_appenderList.end(); ++it)
         {
             (*it)->writeLog(std::ref(*this));
@@ -134,7 +128,7 @@ std::stringstream& Logger::getSS()
 {
     return m_ss;
 }
-<<<<<<< HEAD
+
 char * Logger::getBuffer()
 {
     return m_buffer;
@@ -143,10 +137,7 @@ char * Logger::getBuffer()
 
 //--------------------------普通日志输出类--------------------------
 
-=======
 
-
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 
 FileLogAppender::FileLogAppender(std::string logName) : m_logName(logName)
 {
@@ -156,16 +147,12 @@ FileLogAppender::~FileLogAppender()
 {
     m_fout.close();
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 //从缓冲区将日志输出到文件
 void FileLogAppender::writeLog(Logger &logger)
 {
     if(m_isActive)
     {
-<<<<<<< HEAD
         m_fout << logger.getBuffer();
         //m_fout.flush();
     }
@@ -173,17 +160,15 @@ void FileLogAppender::writeLog(Logger &logger)
 
 //--------------------------标准输出类--------------------------
 
-=======
         m_fout << logger.getSS().str() << std::endl;
     }
 }
 
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
 
 //从缓冲区将日志输出到stdout
 void StdoutLogAppender::writeLog(Logger &logger)
 {
-<<<<<<< HEAD
+
     //std::cout << logger.getBuffer();
 }
 
@@ -293,11 +278,11 @@ void AsyncOutputAppender::outputLog()
     //停止异步日志后，把缓冲区里的数据输出到日志。
     m_fout << m_bufIn->str();
 }
-=======
+
     std::cout << logger.getSS().str() << std::endl;
 }
 
 
->>>>>>> c9082b3300f9284a0e38aeffd6e79c9410821ce7
+
 
 }
